@@ -1,6 +1,5 @@
 // Server setup
 var express = require("express");
-var path = require("path");
 
 var app = express();
 var PORT = process.env.PORT || 3000;
@@ -10,7 +9,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 //Routes
-//Each route file contains the logic??
+require("./app/routing/htmlRoutes.js")(app);
 
 //Server itself
 app.listen(PORT, function() {
