@@ -5,6 +5,7 @@ module.exports = function(app) {
     res.json(allFriends);
   });
   app.get("/api/match", function(req, res) {
+    let match = allFriends[0];
     res.json(match);
   });
 };
