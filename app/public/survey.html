@@ -200,6 +200,7 @@
           </div>
           <div class="modal-body">
             <p id="match-name"></p>
+            <img id="match-photo" src="" alt="" />
           </div>
           <div class="modal-footer">
             <button
@@ -238,7 +239,9 @@
 
         // AJAX post the data to the friends API.
         $.post("/api/friends", userData).then(function(data) {
-          console.log(data);
+          console.log(data.photo);
+          $("#match-name").text(data.name);
+          $("#match-photo").attr("src", data.photo);
           $("#result").modal("toggle");
         });
       });
